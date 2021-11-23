@@ -1,4 +1,3 @@
-console.log("This is included without any error");
 showNotes();
 //if the user adds any note, add it to the local storage
 let addBtn = document.getElementById("addBtn");
@@ -14,7 +13,6 @@ addBtn.addEventListener("click", function (e) {  //e in this function is an even
     notesObj.push(addTxt.value);
     localStorage.setItem("notes", JSON.stringify(notesObj));
     addTxt.value = "";
-    console.log(notesObj);
     showNotes();
 });
 
@@ -52,7 +50,6 @@ function showNotes() {
 //function to delete a note
 
 function deleteNote(index) {
-    console.log("deleted a note", index);
     let notes = localStorage.getItem("notes");
     if (notes == null) {
         notesObj = [];
@@ -64,3 +61,24 @@ function deleteNote(index) {
     localStorage.setItem("notes", JSON.stringify(notesObj));
     showNotes();
 }
+
+
+//feature to search notes
+
+let search = document.getElementById("searchTxt");
+search.addEventListener("input", function(){
+
+    let inputVal = search.value;
+    let noteCards = document.getElementsByClassName("noteCard");
+    Array.from(noteCards).forEach(function(element){
+        let cardTxt = element.getElementsByTagName("p")[0].innerText;
+        if(cardTxt.includes(inputVal))
+        {
+            element.style.display = "block";
+        }
+        else
+        {
+            element.style.display = "none";
+        }
+    })
+})
