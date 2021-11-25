@@ -2,5 +2,22 @@ body {
     background-color: #F7F7F7;
   }
   h1{
-    color:red;
+    color:black;
+  }
+  
+  .topCard{
+    margin-left: 15%;
+  }
+
+  .delNote:hover{
+    background-color: #C9CCD5;
+    color: black;  
+  }
+
+  #addBtn{
+    margin-top: 10px;
+  }
+
+  #addBtn:hover{
+    background-color: #444444;
   }
