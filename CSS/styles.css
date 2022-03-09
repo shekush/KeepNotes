@@ -21,3 +21,13 @@ body {
   #addBtn:hover{
     background-color: #444444;
   }
+
+  .searchBtn{
+    background-color: #444444;
+    color: white;
+  }
+
+  .searchBtn:hover{
+    background-color: #C9CCD5;
+    color: black; 
+  }
